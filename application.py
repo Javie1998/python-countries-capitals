@@ -3,9 +3,12 @@ to choose the destination that pleases,
 a long list of countries and select the one you like"""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import os
 import sys
 =======
+=======
+>>>>>>> 4dd000450406ca2834037bcb354185c69e68b4d0
 from collections import OrderedDict
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
@@ -13,6 +16,9 @@ import os
 import sys
 import smtplib
 import getpass
+<<<<<<< HEAD
+>>>>>>> 4dd000450406ca2834037bcb354185c69e68b4d0
+=======
 >>>>>>> 4dd000450406ca2834037bcb354185c69e68b4d0
 
 dic = {}
@@ -32,6 +38,7 @@ def OnlyCount():
         print key.center(20)
     raw_input("Press enter to Continue")
 <<<<<<< HEAD
+<<<<<<< HEAD
     MENU()
     Clear()
 def OnlyCaps():
@@ -42,6 +49,8 @@ def OnlyCaps():
     MENU()
     Clear()
 =======
+=======
+>>>>>>> 4dd000450406ca2834037bcb354185c69e68b4d0
 def OnlyCaps():
     print "     >>>Capital<<<\n"
     for i in pais_capital:
@@ -49,6 +58,9 @@ def OnlyCaps():
     raw_input("Press Enter to Continue")
     Clear()
     MENU()
+<<<<<<< HEAD
+>>>>>>> 4dd000450406ca2834037bcb354185c69e68b4d0
+=======
 >>>>>>> 4dd000450406ca2834037bcb354185c69e68b4d0
 def country():
     os.system("cls")
@@ -77,7 +89,10 @@ def country():
     ask()
     MENU()
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 4dd000450406ca2834037bcb354185c69e68b4d0
 def CounCapList():
     print """COUNTRY================CAPITAL"""
     for key in pais_capital:
@@ -123,6 +138,9 @@ def email():
 def EXIT():
     raw_input("press enter to continue")
     sys.exit()
+<<<<<<< HEAD
+>>>>>>> 4dd000450406ca2834037bcb354185c69e68b4d0
+=======
 >>>>>>> 4dd000450406ca2834037bcb354185c69e68b4d0
 def Clear():
     os.system("cls")
@@ -150,6 +168,7 @@ def MENU():
         elif DATA == "3" or DATA == "Capitals":
             OnlyCaps()
 <<<<<<< HEAD
+<<<<<<< HEAD
         elif DATA == "4":
             CountriesCapitalLists()
         elif DATA == "5":
@@ -157,12 +176,17 @@ def MENU():
         elif DATA == "6":
             Mail()
 =======
+=======
+>>>>>>> 4dd000450406ca2834037bcb354185c69e68b4d0
         elif DATA == "4" or DATA == "All":
             CounCapList()
         elif DATA == "5":
             orden()
         elif DATA == "6":
             email()
+<<<<<<< HEAD
+>>>>>>> 4dd000450406ca2834037bcb354185c69e68b4d0
+=======
 >>>>>>> 4dd000450406ca2834037bcb354185c69e68b4d0
         elif DATA == "7" or DATA == "exit":
             EXIT()
