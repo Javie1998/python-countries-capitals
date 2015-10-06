@@ -2,8 +2,18 @@
 to choose the destination that pleases, 
 a long list of countries and select the one you like"""
 
+<<<<<<< HEAD
 import os
 import sys
+=======
+from collections import OrderedDict
+from email.MIMEMultipart import MIMEMultipart
+from email.MIMEText import MIMEText
+import os
+import sys
+import smtplib
+import getpass
+>>>>>>> 4dd000450406ca2834037bcb354185c69e68b4d0
 
 dic = {}
 coun = []
@@ -21,6 +31,7 @@ def OnlyCount():
     for key in pais_capital:
         print key.center(20)
     raw_input("Press enter to Continue")
+<<<<<<< HEAD
     MENU()
     Clear()
 def OnlyCaps():
@@ -30,6 +41,15 @@ def OnlyCaps():
     raw_input("Press Enter to Continue")
     MENU()
     Clear()
+=======
+def OnlyCaps():
+    print "     >>>Capital<<<\n"
+    for i in pais_capital:
+        print pais_capital[i].center(20)
+    raw_input("Press Enter to Continue")
+    Clear()
+    MENU()
+>>>>>>> 4dd000450406ca2834037bcb354185c69e68b4d0
 def country():
     os.system("cls")
     os.system("clear")
@@ -56,6 +76,54 @@ def country():
             var2 = True   
     ask()
     MENU()
+<<<<<<< HEAD
+=======
+def CounCapList():
+    print """COUNTRY================CAPITAL"""
+    for key in pais_capital:
+        print key.center(7), pais_capital[key].center(34) +"\n"
+    raw_input("press enter")
+    MENU()
+    Clear()
+def orden():
+    print """==============================================="""
+    print """|Countries                            Capitals|"""
+    ordered = OrderedDict(sorted(pais_capital.items(), key=lambda x: x[1:]))
+    for key, value in ordered.items():
+        print key + "                                        " + value
+    raw_input("Press Enter to Continue")    
+    Clear()
+def email():
+    print "Send email by gmail"
+
+    fromaddr = raw_input("Count from gmail: ")
+    password = getpass.getpass("Password: ")
+    toaddrs = raw_input("to: ")
+    #asunto = raw_input("subject, from message: ")
+    body = "Countries===========Capitals\n"
+    for msg in pais_capital:
+        body = body + str(msg).center(20) +str(pais_capital[msg]).center(30) + "\n" 
+    msg = MIMEMultipart()
+    msg['From'] = fromaddr #This saves the mail of the sender
+    msg['To'] = toaddrs  #This saves the mail of the receiver
+    msg['Subject'] = "Countries and Capitals"  #This saves the subject
+    msg.attach(MIMEText(body, 'plain')) #This saves the message
+
+    try:
+        server = smtplib.SMTP('smtp.gmail.com:587')
+        server.starttls()
+        server.login(fromaddr,password)
+        text = msg.as_string()
+        server.sendmail(fromaddr, toaddrs, text)
+        server.quit()
+        print "yes"
+        raw_input("press enter")
+    except (smtplib.SMTPAuthenticationError):
+        print "No se envio nada"
+def EXIT():
+    raw_input("press enter to continue")
+    sys.exit()
+>>>>>>> 4dd000450406ca2834037bcb354185c69e68b4d0
 def Clear():
     os.system("cls")
     os.system("clear")
@@ -81,12 +149,21 @@ def MENU():
             OnlyCount()
         elif DATA == "3" or DATA == "Capitals":
             OnlyCaps()
+<<<<<<< HEAD
         elif DATA == "4":
             CountriesCapitalLists()
         elif DATA == "5":
             Ordered()
         elif DATA == "6":
             Mail()
+=======
+        elif DATA == "4" or DATA == "All":
+            CounCapList()
+        elif DATA == "5":
+            orden()
+        elif DATA == "6":
+            email()
+>>>>>>> 4dd000450406ca2834037bcb354185c69e68b4d0
         elif DATA == "7" or DATA == "exit":
             EXIT()
         else:
